@@ -1,8 +1,8 @@
-@extends('layouts.template')
+@extends('layouts.principal')
 
 @section('title', 'Something | Fun')
 
-@section('content')
+@section('contenido')
 <div class="row">
   <div class="col-sm-12">
     <div class="panel panel-default">

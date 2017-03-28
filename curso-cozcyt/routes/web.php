@@ -32,3 +32,6 @@ Route::get('controlador3', 'HomeController@index3');
 
 // Controller que manda llamar una vista de Bootstrap
 Route::get('controlador4', 'HomeController@goModulo');
+
+// Controller que manda llamar una vista de Bootstrap
+Route::get('posts/index', 'HomeController@getPost');

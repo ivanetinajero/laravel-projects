@@ -59,7 +59,7 @@
 
     <div class="container " role="main">
 
-      @yield('content')     
+      @yield('contenido')     
 
       <!-- FOOTER -->
       <footer>          

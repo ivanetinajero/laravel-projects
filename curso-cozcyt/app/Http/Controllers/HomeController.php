@@ -21,7 +21,7 @@ class HomeController extends Controller
        $curso1 = "Soy una variable1";
        $curso2 = "Soy una variable2";
        $edad=20;
-       $names =  array("itinajero", "gonzalez", "aruiz" );
+       $names =  ["itinajero", "gonzalez", "ruiz"];
        return view("home.index")->
                with("myvar1",$curso1)->
                with("myvar2",$curso2)->
@@ -31,5 +31,26 @@ class HomeController extends Controller
        
     public function goModulo(){
        return view("home.modulo");
+    }
+    
+    public function getPost(){
+              
+//       \DB::table('posts')
+//            ->where('id', 2)
+//            ->update(['activo' => 0]);
+//       
+//       \DB::table('posts')->where('id', 1)->delete();
+       
+       //$posts2 = \DB::table('posts')->where("activo",true)->get();
+       
+       //$posts3 = \DB::table('posts')->select("id","titulo")->get();
+       
+       //$posts4 = \DB::table('posts')->count();
+       
+       //return $posts;       
+       $posts = \DB::table('posts')->get();
+       return view("post.index")->
+               with("datos",$posts);
+       
     }
 }

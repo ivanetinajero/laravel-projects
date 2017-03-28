@@ -1,8 +1,8 @@
-@extends('layouts.template')
+@extends('layouts.principal')
 
 @section('title', 'Something | Fun')
 
-@section('content')
+@section('contenido')
 <div class="page-header">
   <h1>Wells</h1>
 </div>
