@@ -22,5 +22,5 @@
              @endforeach            
           </tbody>           
         </table>
-      
+      {{ $datos->links() }}
 @endsection

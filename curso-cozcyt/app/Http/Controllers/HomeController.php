@@ -6,51 +6,28 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-       return "Hola desde controlador";
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth'); // este protege todas las funciones de este controller
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('home');
     }
     
-    // Funcion que recibe un parametro via URI
-    public function index2($id){
-       return "UserId: " . $id;
-    }
-    
-    // Funcion que renderiza una vista
-    public function index3(){       
-       //return view("home.index"); // Vista dentro de carpeta
-       $curso1 = "Soy una variable1";
-       $curso2 = "Soy una variable2";
-       $edad=20;
-       $names =  ["itinajero", "gonzalez", "ruiz"];
-       return view("home.index")->
-               with("myvar1",$curso1)->
-               with("myvar2",$curso2)->
-               with("edad",$edad)->
-               with("users", $names);
-    }
-       
-    public function goModulo(){
-       return view("home.modulo");
-    }
-    
-    public function getPost(){
-              
-//       \DB::table('posts')
-//            ->where('id', 2)
-//            ->update(['activo' => 0]);
-//       
-//       \DB::table('posts')->where('id', 1)->delete();
-       
-       //$posts2 = \DB::table('posts')->where("activo",true)->get();
-       
-       //$posts3 = \DB::table('posts')->select("id","titulo")->get();
-       
-       //$posts4 = \DB::table('posts')->count();
-       
-       //return $posts;       
-       $posts = \DB::table('posts')->get();
-       return view("post.index")->
-               with("datos",$posts);
-       
+    public function index2()
+    {
+        return "Funcion protegida";
     }
 }

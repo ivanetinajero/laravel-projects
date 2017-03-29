@@ -22,16 +22,37 @@ Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
 });
 
 // Mandar llamar una funcion, pero de un controller
-Route::get('controlador', 'HomeController@index' );
+Route::get('controlador', 'HomeController2@index' );
 
 // Mandar llamar una funcion con parametros desde un controller.
-Route::get('controlador2/{id}', 'HomeController@index2');
+Route::get('controlador2/{id}', 'HomeController2@index2');
 
 // Controller que manda llamar una vista
-Route::get('controlador3', 'HomeController@index3');
+Route::get('controlador3', 'HomeController2@index3');
 
 // Controller que manda llamar una vista de Bootstrap
-Route::get('controlador4', 'HomeController@goModulo');
+Route::get('controlador4', 'HomeController2@goModulo');
 
 // Controller que manda llamar una vista de Bootstrap
-Route::get('posts/index', 'HomeController@getPost');
+Route::get('posts/index', 'HomeController2@getPost');
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('protegida', function () {
+    return "<h1>Ruta Protegida!!</h1>";
+})->middleware('auth'); // Proteger solo esta URL
+
+Route::get('desprotegida', function () {
+    return "<h1>Recurso desprotegida!!</h1>";
+});
+
+// Ruta que manda llamar una funcion protegida en un Controller
+Route::get('funcion', 'HomeController@index2');
+
+/**
+ * Rutas de la aplicacion
+ */
+Auth::routes();
+
+// Typical "CRUD" routes to a controller with a single line of code. 
+Route::resource('articulos','PostController');

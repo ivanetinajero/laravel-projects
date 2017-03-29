@@ -18,4 +18,18 @@
 - Crear un modelo
 	php artisan make:model Post
 
+- Crear Login-
+	php artisan make:auth
+
+- Documntacion Protecting routes
+
+- Ver todas las URLs de nuestro proyecto
+	php artisan route:list
+
+- Documentacion ->Partial Resource Routes
+
+- Documentation Pagination 
+
+- Documentacion Laravel Collective (https://laravelcollective.com/docs/5.3/html)
+
 - 
