@@ -32,4 +32,24 @@
 
 - Documentacion Laravel Collective (https://laravelcollective.com/docs/5.3/html)
 
+- Paginacion con busqueda (https://laracasts.com/lessons/crazy-simple-pagination)
+
+    public function index(Request $request)
+
+    {
+        $input = $request->all();
+        if($request->get('search')){
+            $items = Item::where("title", "LIKE", "%{$request->get('search')}%")
+                ->paginate(5);      
+        }else{
+		  $items = Item::paginate(5);
+        }
+        return response($items);
+    }
+
+- Documntacion: Validacion de formularios
+   https://laravel.com/docs/5.4/validation#available-validation-rules
+   php artisan make:request CreatePostRequest
+
+   Se crea un archivo en app/Http/Requests
 - 
