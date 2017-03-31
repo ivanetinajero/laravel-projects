@@ -20,6 +20,8 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('bootstrap/css/theme.css')}}" rel="stylesheet">
+    <!-- Angular-xeditable  -->
+    <link href="{{ asset('css/xeditable.min.css')}}" rel="stylesheet">
 
   </head>
 
@@ -35,11 +37,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">My Site</a>
+          <a class="navbar-brand" href="{{route('home')}}">My Site</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Inicio</a></li>
+            <li class="active"><a href="{{route('home')}}">Inicio</a></li>
             <li><a href="#">Acerca</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -59,6 +61,34 @@
 
     <div class="container " role="main">
 
+      @if(Session::has('message_success'))
+         <div class="alert alert-dismissable alert-success">
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           {{ Session::get('message_success') }}
+         </div>
+      @endif
+
+      @if(Session::has('message_info'))
+         <div class="alert alert-dismissable alert-info">
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           {{ Session::get('message_info') }}
+         </div>
+      @endif
+
+      @if(Session::has('message_warning'))
+         <div class="alert alert-dismissable alert-warning">
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           {{ Session::get('message_warning') }}
+         </div>
+      @endif
+
+      @if(Session::has('message_danger'))
+         <div class="alert alert-dismissable alert-danger">
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           {{ Session::get('message_danger') }}
+         </div>
+      @endif
+      
       @yield('contenido')     
 
       <!-- FOOTER -->
@@ -72,6 +102,15 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script> 
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    
+    <!-- https://angularjs.org/ -->
+    <script src="{{ asset('js/angular.min.js')}}"></script> 
+    
+     <!-- Angular-xeditable  -->
+    <script src="{{ asset('js/xeditable.min.js')}}"></script> 
+    
+    <script src="{{ asset('js/controlador2.js')}}"></script> 
+    
   </body>
 </html>

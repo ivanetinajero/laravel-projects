@@ -1,10 +1,7 @@
 <?php
 
-// La Pagina principal
-Route::get('/', function () {
-    return view('home.inicio');
-    //return view("home.index"); // Vista dentro de carpeta
-});
+// La Pagina principal (Le damos un nombre a la ruta)
+Route::get('/', 'PostController@index')->name('home');
 
 // Una ruta con codigo HTML estatico
 Route::get('prueba', function () {
@@ -56,3 +53,15 @@ Auth::routes();
 
 // Typical "CRUD" routes to a controller with a single line of code. 
 Route::resource('articulos','PostController');
+
+// Ruta para probar Angular
+Route::get('index/angular', 'PostController@index_angular');
+
+// Angular hara una peticion a esta URL
+Route::get('consulta/todo', 'PostController@todo_angular');
+
+Route::post('registrar/post', 'PostController@postAngular');
+
+Route::post('eliminar/post/{id}', 'PostController@eliminarAngular');
+
+Route::post('update/post/{id}', 'PostController@actualizarAngular');
