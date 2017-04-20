@@ -2,6 +2,9 @@ Angel Martin
 angelmartin.isc@gmail.com
 https://github.com/absabbath/capacitacion-inselcap
 
+Laravel Cheat Sheet
+http://cheats.jesse-obrien.ca/
+
 - Crear una tabla: Se crea una clase en "database/migrations/2017_03_28_155517_create_posts_table.php"
 	php artisan make:migration create_posts_table --create=posts
 
