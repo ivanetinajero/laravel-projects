@@ -1,0 +1,46 @@
+- Para configurar Sublime
+	CTRL + SHIFT + P: instalar Package Control
+
+- Para instalar paquetes:
+	CTRL + SHIFT + P: install + ?	
+	laravel 5 snippets
+	laravel 5 color scheme
+	blade snippets
+
+- Repo
+	https://github.com/ricardo77a/curso-laravel-intermedio-dev
+
+- Crear proyecto
+	composer create-project --prefer-dist laravel/laravel curso
+
+- Crear virtualhost
+	Abrir el archivo: C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+	<Directory c:\xampp\htdocs>
+		AllowOverride All
+		Require all granted
+		Allow from all
+	</Directory>
+
+	<VirtualHost *:80>
+	    DocumentRoot "C:\xampp\htdocs\curso\public"
+	    ServerName curso.test   
+	</VirtualHost>
+
+- Traduccion
+	https://github.com/Laraveles/spanish
+
+- Laravel Excel 
+	https://docs.laravel-excel.com/3.1/getting-started/installation.html	
+
+- Laravel PDF
+	https://github.com/barryvdh/laravel-dompdf
+
+- Graficas Javascript
+	https://www.chartjs.org/
+
+- subir archivos
+	https://documentacion-laravel.com/filesystem.html#configuracion
+
+- Permisos 
+	https://docs.spatie.be/laravel-permission/v3/installation-laravel/
